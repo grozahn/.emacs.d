@@ -25,6 +25,18 @@
   :init
   (fset 'yes-or-no-p 'y-or-n-p))
 
+(use-package display-line-numbers
+  :hook ((text-mode . display-line-numbers-mode)
+         (prog-mode . display-line-numbers-mode)
+         (conf-mode . display-line-numbers-mode)
+         (display-line-numbers-mode . hl-line-mode))
+
+  :custom
+  (display-line-numbers-width 4)
+  (display-line-numbers-grow-only t)
+  (display-line-numbers-width-start t)
+  (display-line-numbers-type 'relative))
+
 (use-package evil
   :ensure t
   :init
