@@ -37,6 +37,12 @@
   (display-line-numbers-width-start t)
   (display-line-numbers-type 'relative))
 
+(use-package dired
+  :bind ( :map dired-mode-map
+          ("<backspace>" . dired-up-directory))
+  :custom
+  (dired-listing-switches "-lAX --group-directories-first"))
+
 (use-package evil
   :ensure t
   :init
